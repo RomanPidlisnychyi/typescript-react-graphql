@@ -18,14 +18,12 @@ interface Props {
 export const Article: React.FC<Props> = ({ match, location }) => {
   const { pathname } = location;
   const articleId = match.params.articleId;
-  console.log(`articleId`, articleId);
   const { loading, error, data } = useQuery(GET_SECTIONS_BY_ARTICLE_ID, {
     variables: { articleId },
   });
 
   if (loading) return <p>Loading...</p>;
   if (error) {
-    console.log(`error`, error);
     return <p>Error :</p>;
   }
 

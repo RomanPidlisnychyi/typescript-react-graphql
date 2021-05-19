@@ -5,7 +5,7 @@ interface Route {
   label: string;
   exact: boolean;
   public: boolean;
-  component: React.LazyExoticComponent<(props: any) => JSX.Element>;
+  component: any;
 }
 
 type Routes = Route[];
